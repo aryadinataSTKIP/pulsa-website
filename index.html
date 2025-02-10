@@ -3,7 +3,7 @@
       var phoneNumber = document.getElementById("phone").value;
       var amount = document.getElementById("amount").value;
       if (phoneNumber && amount) {
-        var message = "Hello Barokah Online Shop, Saya ingin beli pulsa dengan nomor ini " + phoneNumber + " with amount " + amount;
+        var message = "Assalamu'alaikum Barokah Online Shop, Saya ingin beli pulsa dengan nomor " + phoneNumber + " yang " + amount;
         var whatsappURL = "https://api.whatsapp.com/send?phone=+6287867070880&text=" + encodeURIComponent(message);
         window.location.href = whatsappURL;
       } else {
