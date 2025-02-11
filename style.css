@@ -1,22 +1,110 @@
+/* General Styles */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #f4f4f4;
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
+    margin: 0;
 }
 
+/* Container */
 .container {
     background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px 25px;
+    border-radius: 12px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
     text-align: center;
+    width: 350px;
 }
 
-input, select, button {
+/* Heading */
+h2 {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+/* Form Elements */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Input Fields */
+input, select {
     width: 100%;
-    margin: 10px 0;
-    padding: 10px;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    display: block;
+    box-sizing: border-box;
+}
+
+input:focus, select:focus {
+    border-color: #00c6ff;
+    outline: none;
+}
+
+/* Dropdown Styling */
+select {
+    appearance: none;
+    cursor: pointer;
+    background-color: #fff;
+}
+
+/* Button Group */
+.button-group {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+/* Buttons */
+button {
+    flex: 1;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+button:first-child {
+    background: #00c6ff;
+    color: white;
+}
+
+button:first-child:hover {
+    background: #0072ff;
+}
+
+button:last-child {
+    background: #ff9800;
+    color: white;
+}
+
+button:last-child:hover {
+    background: #e68900;
+}
+
+/* Responsive Design */
+@media (max-width: 400px) {
+    .container {
+        width: 90%;
+    }
 }
