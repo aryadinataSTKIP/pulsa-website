@@ -1,20 +1,66 @@
-<script>
-    function sendToWhatsApp() {
-      var phoneNumber = document.getElementById("phone").value;
-      var amount = document.getElementById("amount").value;
-      if (phoneNumber && amount) {
-        var message = "Assalamu'alaikum Barokah Online Shop, Saya ingin beli pulsa dengan nomor " + phoneNumber + " yang " + amount;
-        var whatsappURL = "https://api.whatsapp.com/send?phone=+6287867070880&text=" + encodeURIComponent(message);
-        window.location.href = whatsappURL;
-      } else {
-        alert("Please enter your phone number and amount.");
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barokah Shop - Pulsa & Token</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h2>Barokah Shop</h2>
+        <p>Top Up Pulsa & Token Instantly</p>
+
+        <form id="orderForm" onsubmit="event.preventDefault(); sendToWhatsApp();">
+            <input type="text" id="phone" placeholder="Nomor Telepon Anda" required>
+            <select id="amount" placeholder="Yang Berapa Ribu...?" required>
+                <option value="" disabled selected>Pilih nominal</option>
+                <option value="5k">5K</option>
+                <option value="10k">10K</option>
+                <option value="15k">15K</option>
+                <option value="20k">20K</option>
+                <option value="25k">25K</option>
+                <option value="30k">30K</option>
+                <option value="35k">35K</option>
+                <option value="40k">40K</option>
+                <option value="45k">45K</option>
+                <option value="50k">50K</option>
+                <option value="55k">55K</option>
+                <option value="60k">60K</option>
+                <option value="65k">65K</option>
+                <option value="70k">70K</option>
+                <option value="75k">75K</option>
+                <option value="80k">80K</option>
+                <option value="85k">85K</option>
+                <option value="90k">90K</option>
+                <option value="95k">95K</option>
+                <option value="100k">100K</option>
+                <option value="200k">200K</option>
+                <option value="500k">500K</option>
+                <option value="1jt">1JT</option>
+            </select>
+
+            <div class="button-group">
+                <button type="button" onclick="sendToWhatsApp('pulsa')">Buy Pulsa</button>
+                <button type="button" onclick="sendToWhatsApp('token')">Buy Token</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+      function sendToWhatsApp(type) {
+          var phoneNumber = document.getElementById("phone").value;
+          var amount = document.getElementById("amount").value;
+          if (phoneNumber && amount) {
+              var message = "Hello Barokah Online Shop, Saya ingin beli " + (type === 'pulsa' ? 'pulsa' : 'token listrik') + 
+                            " dengan nomor " + phoneNumber + " sejumlah " + amount;
+              var whatsappURL = "https://api.whatsapp.com/send?phone=+6287867070880&text=" + encodeURIComponent(message);
+              window.location.href = whatsappURL;
+          } else {
+              alert("Please enter your phone number and amount.");
+          }
       }
-    }
-  </script>
-  
-  <form onsubmit="event.preventDefault(); sendToWhatsApp();">
-    <input type="text" id="phone" placeholder="Enter phone number" required>
-    <input type="text" id="amount" placeholder="Enter amount" required>
-    <button type="submit">Send</button>
-  </form>
-  
+    </script>
+</body>
+</html>
