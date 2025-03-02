@@ -53,8 +53,8 @@
           var phoneNumber = document.getElementById("phone").value;
           var amount = document.getElementById("amount").value;
           if (phoneNumber && amount) {
-              var message = "Assalamu'alaikum!,  Mau isi " + (type === 'pulsa' ? 'pulsa' : 'token listrik') + 
-                            " nih. Nomornya: " + phoneNumber + ", nominal: " + amount + ". Mohon diproses, ya. Makasih! 🙏 ";
+              var message = "Assalamu'alaikum Arya... Saya Mau isi " + (type === 'pulsa' ? 'pulsa' : 'token listrik') + 
+                            " nih. Nomornya: " + phoneNumber + ", yg " + amount + "aja! Mohon diproses, ya. Makasih! 🙏 ";
               var whatsappURL = "https://api.whatsapp.com/send?phone=+6287867070887&text=" + encodeURIComponent(message);
               window.location.href = whatsappURL;
           } else {
