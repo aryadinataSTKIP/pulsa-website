@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smart - Pulsa & Token</title>
+    <title>Pulsa & Token Listrik</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
-        <h2>Smart</h2>
-        <p>Top Up Pulsa & Token Instantly</p>
+        <h2>Barokah</h2>
+        <p>Top Up Pulsa & Token </p>
 
         <form id="orderForm" onsubmit="event.preventDefault(); sendToWhatsApp();">
-            <input type="text" id="phone" placeholder="Nomor Telepon Anda" required>
+            <input type="text" id="phone" placeholder="Nomor Telepon/Nomor ID Pelanggan" required>
             <select id="amount" placeholder="Yang Berapa Ribu...?" required>
                 <option value="" disabled selected>Pilih nominal</option>
                 <option value="5k">5K</option>
@@ -42,8 +42,8 @@
             </select>
 
             <div class="button-group">
-                <button type="button" onclick="sendToWhatsApp('pulsa')">Buy Pulsa</button>
-                <button type="button" onclick="sendToWhatsApp('token')">Buy Token</button>
+                <button type="button" onclick="sendToWhatsApp('pulsa')">Beli Pulsa</button>
+                <button type="button" onclick="sendToWhatsApp('token')">Beli Token</button>
             </div>
         </form>
     </div>
@@ -53,12 +53,12 @@
           var phoneNumber = document.getElementById("phone").value;
           var amount = document.getElementById("amount").value;
           if (phoneNumber && amount) {
-              var message = "Assalamu'alaikum Arya... Saya Mau isi " + (type === 'pulsa' ? 'pulsa' : 'token listrik') + 
-                            " nih. Ini nomornya: " + phoneNumber + ", yg " + amount + "aja! Mohon diproses, ya. Makasih! 🙏 ";
-              var whatsappURL = "https://api.whatsapp.com/send?phone=+6287867070877&text=" + encodeURIComponent(message);
+              var message = "Assalamu'alaikum ... Saya Mau isi " + (type === 'pulsa' ? 'pulsa' : 'token listrik') + 
+                            " nih. Ini nomornya: " + phoneNumber + ", yg " + amount + " aja! Mohon diproses, ya. Makasih! 🙏 ";
+              var whatsappURL = "https://api.whatsapp.com/send?phone=+6285189209275&text=" + encodeURIComponent(message);
               window.location.href = whatsappURL;
           } else {
-              alert("Monggo... Di isi dulu Nomor telepon dan nominalnya...!");
+              alert("Monggo... Di isi dulu Nomor telepon atau ID Pelanggan dan nominalnya...!");
           }
       }
     </script>
